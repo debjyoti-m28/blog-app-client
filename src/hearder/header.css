@@ -1,0 +1,48 @@
+.header{
+    margin-top: 60px;
+}
+.headerTitles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Lora', serif;
+    color: #444;
+}
+.headerTitleSm{
+    position: absolute;
+    top: 12.5%;
+    font-size: 26px;
+}
+.headerTitleLg{
+    position: absolute;
+    top: 14.5%;
+    font-size: 124px;
+    font-weight: 600;
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.callToAction{
+    position: absolute;
+    font-family: 'Nunito', sans-serif;
+    padding: 3px 6px;
+    border: none;
+    border-radius: 8px;
+    left : 828px;
+    top: 37.5%;
+    color: white;
+    background-color: rgb(251, 137, 55);
+    font-size: 16px;
+    cursor: pointer;
+}
+.callToAction:hover{
+    background-color: rgb(255, 124, 31);
+}
+
+.headerImage{
+    width: 100%;
+    height: 530px;
+    margin-top: 70px;
+    object-fit: cover;
+}
