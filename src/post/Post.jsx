@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./post.css"
 
 export default function Post({post}) {
-  const publicFrolder = "http://localhost:8800/images/";
+  const publicFrolder = "https://heyblogit.herokuapp.com/images/";
 
   return (
     <div className='post'>

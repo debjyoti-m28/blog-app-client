@@ -5,7 +5,7 @@ import "./topbar.css"
 
 export default function Topbar() {
   const { user, dispatch }= useContext(Context);
-  const publicFrolder = "http://localhost:8800/images/";
+  const publicFrolder = "https://heyblogit.herokuapp.com/images/";
 
   const handleLogout = () =>{
       dispatch({type:"LOGOUT"});

@@ -4,7 +4,7 @@ import { Context } from '../context/Context';
 import "./header.css"
 
 export default function Header() {
-  const publicFrolder = "http://localhost:8800/images/";
+  const publicFrolder = "https://heyblogit.herokuapp.com//images/";
   const { user }= useContext(Context);
   return (
     <div className="header">
@@ -18,7 +18,7 @@ export default function Header() {
         </div>
         <img
         className="headerImage"
-         src="http://localhost:8800/images/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg"
+         src="https://heyblogit.herokuapp.com/images/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg"
          alt=""
            />
     </div>

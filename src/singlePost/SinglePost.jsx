@@ -4,13 +4,14 @@ import Footer from '../footer/Footer';
 import axios from "axios";
 import "./singlePost.css"
 import { Context } from '../context/Context';
+import { axiosInstance } from '../config';
 
 export default function SinglePost() {
   const location = useLocation();  //  pathname: "/post/62e8c6be021f3dbe8d823aeb"
   const path = location.pathname.split("/")[2];  //  62e8c6be021f3dbe8d823aebF
   // console.log(path);
   const [post, setPost] = useState({});
-  const publicFrolder = "http://localhost:8800/images/";
+  const publicFrolder = "https://heyblogit.herokuapp.com/images/";
   const { user } = useContext(Context);
   const [updateTitle, setUpdateTitle] = useState("");
   const [updateDesc, setUpdateDesc] = useState("");
@@ -18,7 +19,7 @@ export default function SinglePost() {
 
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get("/posts/" + path);
+      const res = await axiosInstance.get("/posts/" + path);
       setPost(res.data);
       //storing for updates
       setUpdateTitle(res.data.title);
@@ -29,7 +30,7 @@ export default function SinglePost() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/posts/${post._id}`, { data: { username: user.username } });
+      await axiosInstance.delete(`/posts/${post._id}`, { data: { username: user.username } });
       window.location.replace("/");
     } catch (err) {
 
@@ -38,7 +39,7 @@ export default function SinglePost() {
 
   const handleUpdate = async(e) =>{
     try {
-      await axios.put(`/posts/${post._id}`, {
+      await axiosInstance.put(`/posts/${post._id}`, {
           username: user.username,
           title: updateTitle,
           desc: updateDesc

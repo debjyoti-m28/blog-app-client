@@ -4,6 +4,7 @@ import axios from "axios";
 import { Context } from "../../context/Context";
 import "./write.css"
 import Footer from '../../footer/Footer';
+import { axiosInstance } from '../../config';
 
 export default function Write() {
   const [title, setTitle] = useState("");
@@ -25,14 +26,14 @@ export default function Write() {
       data.append("file", file);
       newPost.photo = filename;
       try{
-         await axios.post("/upload", data);
+         await axiosInstance.post("/upload", data);
       }catch(err){
 
       }
     }
     
     try{
-     const res = await axios.post("/posts", newPost);
+     const res = await axiosInstance.post("/posts", newPost);
      window.location.replace("/post/"+res.data._id);
     }catch(err){
 
